@@ -56,7 +56,7 @@ Reducing network latency
 
 # Project workflow:
 
-#Create a custom VPC
+# Create a custom VPC
 
 1. Launch AWS console, Select VPC, VPC only
 
@@ -241,7 +241,9 @@ Reducing network latency
 
 2. Refresh between the 2 created instance
 
-# Expected result: The Browser should flick between the 2 created instance evenly.
+# Expected result: 
+
+The Browser should flick between the 2 created instance evenly.
 
 # Issues encountered: 
 
@@ -357,7 +359,7 @@ It acts as a secure, high-availability bridge, translating private IP addresses 
 
 Nat gateway has to be in the public subnet to be able to connect to the internet gateway to access the internet.
 
-Using the existing custome VPC, from load balancer project
+# Using the existing custome VPC, from load balancer project
 
 1. Create a new subnet which is a Private subnet.
 
@@ -377,7 +379,7 @@ Using the existing custome VPC, from load balancer project
 
 9. Click on the private subnet, save associations
 
-Create EC2 instances
+# Create EC2 instances
 
 1. Create EC2 instance
 
