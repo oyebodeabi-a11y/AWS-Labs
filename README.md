@@ -369,23 +369,23 @@ Nat gateway has to be in the public subnet to be able to connect to the internet
 
 2. Create a Nat gateway "loadbalance-NATGW"
 
-3. Select the VPC created. Connectivity type, leave  a Public.
+3. Select the VPC created. Connectivity type, leave as Public. Create Nat gateway.
 
 4. Create route table called "private routetable"
 
 5. Edit route table
 
-6. Slect 0.0.0.0, Nat gateway, select create NGW
+6. Select 0.0.0.0, Nat gateway, select create NGW
 
 7. Save changes
 
 8. Click on subnet, Subnet associations
 
-9. Click on the private subnet, save associations
+9. Click on the private subnet, save associations. This step may have been done by default.
 
 # Create EC2 instances
 
-1. Create EC2 instance
+1. Create EC2 instance - For Instance in the private subnet.
 
 2. Auto sign public IP, select disable. This is because the instane is for a private subnet.
 
@@ -397,9 +397,65 @@ Nat gateway has to be in the public subnet to be able to connect to the internet
 
 3. Copy and paste chmond link to VS code
 
-4. Copy and paste 2nd link to VS code
+4. In VS code, go to file, open folder, select the folder where the key pair is saved. In this case, download.
 
-5. Navigate to download folder where the key pair is saved to access the instance server via VS code.
+5. Once the terminal is opened, type ls -lart
+
+6. Connect to the public EC2 instance using the link with Example. 
+
+7. Copy and paste to the terminal. Type Yes.
+
+8. Check the IP address displayed in the terminal
+
+9.  To connect to the Private EC2, click on the middle terminal in VS code. 
+
+10. Type cat. Abi1.pem (this is the key pair)
+
+11. Copy the information provided (from begin RSA private key to end private key)
+
+12. Type vi space Abi1.pem
+
+13. Press i and then paste what was copied from the key pair
+
+14. Save using Esc: wq!
+
+15. Then type ls
+
+16. Note, to connect to the private EC2, the key pair  is needed.
+
+17. Then click on the private EC2 instance in the console. Click on connect.
+
+18. Copy the link under Chmod.
+
+19. Go to VS code, paste and press enter
+
+20. Connect to the private EC2 instance using the link with Example. Copy and paste in VS code. Check the IP address has changed
+
+21. Type ping google.com to test it works. 
+
+22.  Press Ctrl + C when you want to stop the google run.
+
+# Private subnet usually has a Database.
+
+1. Access MySql database in the private EC2.
+
+2. Type sudo mysql
+
+3. Type show databases;
+
+4. To create a database called personnel or london use the code below:
+
+CREATE TABLE personnel (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    position VARCHAR(100)
+);
+
+5. Type show tables;
+
+6. Type exit
+
+7. Type exit again to come out of private subnet.
 
 # To terminate all services used
 
@@ -420,4 +476,54 @@ Nat gateway has to be in the public subnet to be able to connect to the internet
 8. Delete VPC
 
 9. Delete security groups but not any default SGs. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## S3 - Amazon Simple storage service
+
+Amazon Simple Storage Service (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance.
+
+# S3 Step up
+
+1. In the AWS console, type S3 and click create Bucket
+
+2. Enter a unique name for the S3 bucket.
+
+3. Create a bucket
+
+4. Enter a file, click on add files.
+
+5. Once successfully created, delete bucket to avoid charges.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# IAM - Identity and Access Management
+
+AWS Identity and Access Management (IAM) is a free, core web service that enables secure control over access to AWS resources and services. It manages authentication (who is signed in) and authorization (what permissions they have), allowing administrators to define users, groups, and roles with specific policies.
+
+# IAM Step up
+
+1. Log into AWS as a root user
+
+2. In the console, create a Group "Developers"
+
+3. Grant persmissions to the group, Administrative access
+
+4. Click on users, add users to Group.
+
+5. Click on user added - Abi
+
+6. Click on create access key
+
+7. click on command line interface
+
+8. Type "demo" in description tag value
+
+9. click on create access key.
+
+10. Once the AWS  command line for windows has been installed, 
+
+11. Type aws --version
+
+12. Type aws configure
 
