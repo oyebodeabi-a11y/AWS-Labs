@@ -165,7 +165,7 @@ Reducing network latency
 
 1. Click launch instance
 
-2. Name the instance "load balancer -server B"
+2. Name the instance "load balancer-server B"
 
 3. Select Ubuntu, leave all default selections
 
@@ -179,7 +179,7 @@ Reducing network latency
 
 8. Add security group "load balancer-SG", select existing security group
 
-9. 9. Select HTTP for port 80, in addition to existing default port 22.
+9. Select HTTP for port 80, in addition to existing default port 22.
 
 10. Change source type to Anywhere
 
@@ -189,7 +189,7 @@ Reducing network latency
 
 # Launch Instances in Browser
 
-1. Copy the IPv4 fro both instances and past into 2 seperate browsers.
+1. Copy the IPv4 for both instances and past into 2 seperate browsers.
 
 # Notes for Browser errors:
 
@@ -359,7 +359,11 @@ It acts as a secure, high-availability bridge, translating private IP addresses 
 
 Nat gateway has to be in the public subnet to be able to connect to the internet gateway to access the internet.
 
-# Using the existing custome VPC, from load balancer project
+<img width="584" height="298" alt="Image" src="https://github.com/user-attachments/assets/3b4ae68d-b78e-47cf-888c-ea05b9d000b6" />
+
+
+
+# Using the existing customer VPC, from load balancer project
 
 1. Create a new subnet which is a Private subnet.
 
